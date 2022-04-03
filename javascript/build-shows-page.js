@@ -6,7 +6,7 @@ let ronaldLaneShows = document.createElement("ul");
 let ronaldLaneShowsDate = document.createElement("li");
 let ronaldLaneShowsVenue = document.createElement("li");
 let ronaldLaneLocation = document.createElement("li");
-let ronaldLaneTickets = document.createElement("button");
+let ronaldLaneTickets = document.createElement("li");
 
 
 // class list //
@@ -15,7 +15,8 @@ ShowsContainer.classList.add("shows-container");
 ticketSection.classList.add("tickets-section");
 ronaldLaneShows.classList.add("ronald-lane-div");
 ronaldLaneShowsDate.classList.add("concert-dates");
-ronaldLaneLocation.classList.add("concert-venue");
+ronaldLaneLocation.classList.add("concert-location");
+ronaldLaneShowsVenue.classList.add("concert-venue")
 ronaldLaneTickets.classList.add("concert-tickets");
 
 
@@ -27,13 +28,14 @@ let pierShows = document.createElement("ul");
 let pierShowsDate = document.createElement("li");
 let pierShowsVenue = document.createElement("li");
 let pierLocation = document.createElement("li");
-let pierTickets = document.createElement("button");
+let pierTickets = document.createElement("li");
 
 // class list//
 pierContainer.classList.add("pier-east-container");
 pierShows.classList.add("pier-shows-ul");
 pierShowsDate.classList.add("concert-dates");
-pierLocation.classList.add("concert-venue");
+pierLocation.classList.add("concert-location");
+pierShowsVenue.classList.add("concert-venue");
 ronaldLaneTickets.classList.add("concert-tickets");
 
 
@@ -45,7 +47,7 @@ let loungeShows = document.createElement("ul");
 let loungeShowsDate = document.createElement("li");
 let loungeShowsVenue = document.createElement("li");
 let loungeLocation = document.createElement("li");
-let loungeTickets = document.createElement("button");
+let loungeTickets = document.createElement("li");
 
 
 //class list//
@@ -60,7 +62,7 @@ let hyattShows = document.createElement("ul");
 let hyattShowsDate = document.createElement("li");
 let hyattShowsVenue = document.createElement("li");
 let hyattLocation = document.createElement("li");
-let hyattTickets = document.createElement("button");
+let hyattTickets = document.createElement("li");
 
 //class list //
 hyattContainer.classList.add("hyatt-agency-div");
@@ -76,7 +78,7 @@ let moscowShows = document.createElement("ul");
 let moscowShowsDate = document.createElement("li");
 let moscowShowsVenue = document.createElement("li");
 let moscowLocation = document.createElement("li");
-let moscowTickets = document.createElement("button");
+let moscowTickets = document.createElement("li");
 
 //class list//
 moscowContainer.classList.add("moscow-center-div");
@@ -89,7 +91,7 @@ let pressShows = document.createElement("ul");
 let pressShowsDate = document.createElement("li");
 let pressShowsVenue = document.createElement("li");
 let pressLocation = document.createElement("li");
-let pressTickets = document.createElement("button");
+let pressTickets = document.createElement("li");
 
 // class list //
 pressContainer.classList.add("press-club-div");
@@ -168,9 +170,8 @@ pressShows.appendChild(pressShowsVenue);
 pressShows.appendChild(pressLocation);
 pressShows.appendChild(pressTickets);
 
+
 document.body.appendChild(ticketSection);
-
-
 
 
 
@@ -230,6 +231,9 @@ pressTickets.innerHTML = "BUY TICKETS";
 // title section text value//
 
 showsTitleDiv.innerHTML = "SHOWS";
+
+
+
 
 
 
