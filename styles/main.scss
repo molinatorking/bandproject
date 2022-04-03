@@ -1,0 +1,878 @@
+$primaryBlack: #323232;
+$primarySilver: #AFAFAF;
+$primaryWhite : #FFFFFF;
+$secondaryBlack: #000000;
+$secondaryMercury: #E1E1E1;
+
+
+
+@mixin fontOption1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: large;
+    font-weight: 300;
+    
+}
+
+.bees-knees-paragraph  {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: xx-large;
+    font-weight: 800;
+   }
+
+   .about-section-title {
+       font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: xx-large;
+    font-weight: 800;
+   }
+
+//display flex mixins //
+@mixin typeOfDisplay {
+    display: flex; 
+}
+
+@mixin displayFlexJustify {
+    display: flex;
+    justify-content: center;
+    
+}
+
+@mixin flexWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap ;
+    
+}
+
+@mixin flexJustifyStart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+     
+}
+
+@mixin displayFlexColumn {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+
+}
+
+@mixin flexSpaceAround {
+    display: flex;
+    justify-content: space-around;
+}
+
+@mixin flexColumnReverse {
+    display: flex;
+    flex-direction: column-reverse ;
+}
+    // flex mixins end here //
+
+    
+  @mixin paddingHeaderElements {
+    padding-top: 2%;
+    padding-bottom: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 45%;
+    justify-content: baseline; 
+}
+    
+    @mixin HeroHeightResponsiveness {
+        @include displayFlexJustify();
+        height: 465px;
+    }
+    @mixin heroResponsivenessTwo {
+        @include displayFlexJustify();
+        height: 340px;
+    }
+    @mixin heroResponsivenessThree {
+        @include displayFlexJustify();
+        height: 400px; 
+    }
+    @mixin titleDesktopParameters {
+    width: 1300px;
+    padding-left: 600px;
+    padding-top: 15px;
+    padding-bottom: 10px ;
+        
+    }
+    
+    @mixin titleDesktopParametersTwo {
+        width: 1000px;
+        padding-left: 500px;
+        padding-top: 15px;
+    }
+    
+    @mixin titleDesktopParametersThree {
+        width: 300px;
+        padding-left: 60px;
+        padding-top: 2px;
+    }
+    
+    @mixin navMargins {
+    margin-bottom: 8px;
+    margin-top: 16px ;   
+    }
+    
+    
+    @mixin backgroundParameters {
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    }
+    @mixin paddingOptionsOne {
+        padding-left: 2px;
+        padding-right: 2px;
+        }
+    
+  @mixin generalResponsiveness {
+    height: 50%;
+    width: 75%;
+      
+  }
+
+  @mixin divPadding {
+    width: 60%;
+   padding-left: 6%;
+   padding-right: 6%;
+  }
+
+  @mixin heroTitleParameters {
+    margin-right: 40%;
+    margin-bottom: 5%;  
+  }
+  @mixin articleParameters {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+     
+  }
+
+  @mixin pictureParameter {
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+     
+      
+  }
+// function for responsiveness//
+@mixin responsive($breakPoint) {
+    @if $breakPoint == smallScreen {
+        @media only screen and (max-width: 100%) {@content};
+    }
+    @if $breakPoint == phone {
+        @media only screen and (max-width: 100%) {@content};
+    }
+
+    @if $breakPoint == tablet {
+        @media only screen and (max-width: 100%) {@content};
+    }
+    @if $breakPoint == desktop {
+        @media only screen and (max-width: 100%) {@content};
+    }
+
+}      
+@mixin textSize($breakPoint) {
+    @if $breakPoint == tinyScreen {
+        @media only screen and (max-width: 60%) {@content};
+    }
+    @if $breakPoint == mobile {
+        @media only screen and (max-width: 700px) {@content};
+    }
+
+    @if $breakPoint == handHeld {
+        @media only screen and (max-width: 1000px) {@content};
+    }
+    @if $breakPoint == largeScreens {
+        @media only screen and (max-width: 1300px) {@content};
+    }
+
+}      
+
+     
+@mixin imageFunction($breakPoint) {
+    @if $breakPoint == size1 {
+        @media only screen and (max-width: 500px) {@content};
+    }
+    @if $breakPoint == size2 {
+        @media only screen and (max-width: 400px) {@content};
+    }
+
+    @if $breakPoint == size3 {
+        @media only screen and (max-width: 600px) {@content};
+    }
+    @if $breakPoint == size4 {
+        @media only screen and (max-width: 800px) {@content};
+    }
+
+}      
+
+@mixin FooterResponsiveness($breakPoint) {
+    @if $breakPoint == footer1 {
+        @media only screen and (max-width: 400px) {@content};
+    }
+    @if $breakPoint == footer2 {
+        @media only screen and (max-width: 700px) {@content};
+    }
+
+    @if $breakPoint == footer3 {
+        @media only screen and (max-width: 1000px) {@content};
+    }
+    @if $breakPoint == footer4 {
+        @media only screen and (max-width: 1300px) {@content};
+    }
+
+}      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      .main-page-header {
+        background-color: $primaryBlack;
+        @include responsive(desktop){
+          @include paddingHeaderElements();
+      
+        }
+        @include responsive(tablet) {
+            @include paddingHeaderElements();
+            
+        }
+        @include responsive(phone) {
+            @include paddingHeaderElements();
+            
+        }
+        @include responsive(smallScreen) {
+            @include paddingHeaderElements();
+             
+        }
+        }
+        
+        
+    // the div containing logo and main UL //
+    
+    .header-nav-container  {
+        @include responsive(desktop) {
+            @include flexJustifyStart();
+          
+        }
+    
+        @include responsive(tablet) {
+            @include flexJustifyStart();
+        
+        }
+    
+     @include responsive(phone) {
+         @include displayFlexColumn();
+         
+     }
+     @include responsive(smallScreen) {
+         @include displayFlexColumn()
+         
+     }
+    
+    }
+        
+    
+    
+    .main-page-header-ul  {
+        @include fontOption1();
+        list-style: none;
+    @include responsive(desktop) {
+    }
+    @include displayFlexJustify();
+    @include flexSpaceAround();
+    @include navMargins(); }
+
+    @include responsive(tablet) {
+   
+    @include displayFlexJustify();
+    @include flexSpaceAround();
+    @include navMargins(); }
+    
+    @include responsive(phone) {
+    
+    @include displayFlexJustify();
+    @include flexSpaceAround();
+    @include navMargins();}
+ 
+    @include responsive(smallScreen) {
+     @include displayFlexJustify();
+     @include flexSpaceAround();
+    @include navMargins();
+    }
+    
+
+    
+    .main-page-logo  {
+    
+     @include displayFlexJustify();
+        @include navMargins();
+    }
+    
+    // the hero section begins//
+    .bees-knees-div {
+    background-image: url(../assets/hero-bio.jpg); 
+    color: $primaryWhite;
+    @include responsive(desktop) {
+       @include HeroHeightResponsiveness();
+       @include backgroundParameters()
+
+      
+    }
+    @include responsive(tablet ){
+     @include heroResponsivenessTwo();
+        @include backgroundParameters();
+    
+    }
+    @include responsive(phone) {
+        @include backgroundParameters();
+       @include heroResponsivenessThree();
+       
+    }
+    @include responsive(smallScreen ) {
+        @include HeroHeightResponsiveness();
+        @include backgroundParameters();
+        
+    }
+    @include HeroHeightResponsiveness();
+    @include backgroundParameters();
+
+    }
+
+
+    .bees-knees-paragraph-container {
+        @include flexColumnReverse();
+        @include heroTitleParameters ();
+    }
+    //the hero section ends //
+    
+    .about-section-container-div  {
+        @include divPadding();
+    }
+    
+ 
+    .about-section-title {
+     @include responsive(desktop) { 
+         @include flexJustifyStart();
+         @include titleDesktopParameters();
+     
+    } 
+    @include responsive( tablet){
+       @include flexJustifyStart();
+       @include titleDesktopParametersTwo();
+    }
+    @include responsive(phone) {
+        @include flexJustifyStart();
+        @include titleDesktopParametersThree();
+    }
+    
+}
+
+.about-section-img-div {
+    @include displayFlexJustify();
+}
+
+.about-section-img {
+    @include displayFlexJustify();
+   @include generalResponsiveness();
+}
+
+
+.band-article-div   {
+  
+@include responsive( desktop ) {
+@include displayFlexJustify ();
+
+}
+@include responsive( tablet ) { 
+    
+   
+    
+}
+   
+@include responsive( phone ) { 
+    @include displayFlexColumn();
+    @include typeOfDisplay();
+   
+}
+ 
+@include responsive ( smallScreen) { 
+    @include displayFlexColumn();
+    @include typeOfDisplay();
+   
+}
+}    
+
+.band-article-div-container  {
+    
+    @include textSize(largeScreens) {
+        @include articleParameters();
+        @include displayFlexJustify();
+    }
+    @include textSize( handHeld ) {
+        @include displayFlexJustify();
+        @include articleParameters();
+    }
+    @include textSize( mobile ) {
+        @include displayFlexColumn();
+        @include articleParameters();
+    }
+    @include textSize(tinyScreen ) {
+        @include displayFlexColumn();
+        @include articleParameters();
+    }
+
+}
+
+.band-article-paragraph1 { 
+    height: 90%;
+    width: 95%;
+    padding-left: 20%;
+@include articleParameters();
+
+}
+
+.band-article-paragraph2  {
+   
+    height: 90%;
+    width: 95%;
+    padding-left: 20%;
+ @include articleParameters();
+
+}
+
+.photo-galerry-div {
+    @include imageFunction(size4) {
+       @include displayFlexJustify();
+    }
+    @include imageFunction(size3)c{
+        @include displayFlexJustify();
+    }
+
+    @include imageFunction(size2){
+        @include typeOfDisplay();
+    }
+    @include imageFunction(size1) {
+        @include typeOfDisplay();
+    }
+      
+
+}
+
+.photo-gallery-container-div  {
+   @include flexWrap();
+    
+}
+
+
+.Bees-divs-concert-photos {
+   width: 265px;
+   @include pictureParameter();
+    
+}
+
+.band-article-quote-container  {
+    @include divPadding();
+}
+
+
+
+
+
+
+footer {
+    background-color: $primaryBlack;
+}
+
+
+
+.get-in-touch-container {
+    padding-left: 45px;
+    justify-content: baseline;
+    
+    @include FooterResponsiveness(footer4) {
+        @include typeOfDisplay ();
+    
+
+    }
+    @include FooterResponsiveness(footer3){
+        @include typeOfDisplay();
+       
+
+    }
+    @include FooterResponsiveness(footer2) {
+     @include displayFlexColumn();   
+     
+    }
+    @include FooterResponsiveness(footer1) {
+        @include displayFlexColumn();
+        
+    }
+
+  
+
+}
+
+.get-in-touch-text {
+    color: $primaryWhite;
+    padding-right: 15px;
+}
+
+.icons-container-div {
+ @include flexJustifyStart();
+ @include flexSpaceAround();
+    width: 160px;
+    height: 80px;
+}
+
+.get-in-touch-div-paragraph {
+    @include paddingOptionsOne();
+}
+   
+
+.credentials-div {
+    
+    @include flexSpaceAround();
+    @include FooterResponsiveness(footer4) {
+        @include typeOfDisplay ();
+    
+
+    }
+    @include FooterResponsiveness(footer3){
+        @include typeOfDisplay();
+       
+
+    }
+    @include FooterResponsiveness(footer2) {
+     @include displayFlexColumn();   
+     
+    }
+    @include FooterResponsiveness(footer1) {
+        @include displayFlexColumn();
+        
+    }
+
+
+}
+
+
+.credentials-text-elements {
+    @include fontOption1();
+    color: $secondaryMercury;
+    text-decoration: none;
+   
+}
+
+.text-divider {
+
+    margin-top: 55px;
+    margin-bottom: 55px;
+}
+
+a {
+    color: $primaryWhite;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+
+
+
+
+
+
+
+//shows starts here //
+
+
+.beautiful-beasts-div {
+    background-image: url(../assets/hero-shows.jpg); 
+    color: $primaryWhite;
+    @include responsive(desktop) {
+       @include HeroHeightResponsiveness();
+       @include backgroundParameters()
+
+      
+    }
+    @include responsive(tablet ){
+     @include heroResponsivenessTwo();
+        @include backgroundParameters();
+    
+    }
+    @include responsive(phone) {
+        @include backgroundParameters();
+       @include heroResponsivenessThree();
+       
+    }
+    @include responsive(smallScreen ) {
+        @include HeroHeightResponsiveness();
+        @include backgroundParameters();
+        
+    }
+    @include HeroHeightResponsiveness();
+    @include backgroundParameters();
+
+    }
+
+
+
+    .beautiful-beasts-paragraph-container{
+       
+        @include flexColumnReverse();
+        @include heroTitleParameters ();
+        @include textSize(largeScreens) {
+            @include articleParameters();
+            @include displayFlexJustify();
+        }
+        @include textSize( handHeld ) {
+            @include displayFlexJustify();
+            @include articleParameters();
+        }
+        @include textSize( mobile ) {
+            @include displayFlexColumn();
+            @include articleParameters();
+        }
+        @include textSize(tinyScreen ) {
+            @include displayFlexColumn();
+            @include articleParameters();
+        }
+    
+        
+        }
+
+        .music-container-div {
+
+        }
+    
+
+
+    .beautiful-beasts-paragraph-container {
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-size: xx-large;
+        font-weight: 800;
+       }
+
+       section {
+           width: auto;
+           height: 400px;
+
+       }
+          
+       .tickets-section{
+           margin-right: 20%;
+           display: flex;
+           justify-content: center;
+           flex-direction: column;
+          margin-left: 10%;
+          @include responsive(desktop) {
+           
+           
+         }
+         @include responsive(tablet ){
+       
+         
+         }
+         @include responsive(phone) {
+          
+            
+         }
+         @include responsive(smallScreen ) {
+           
+         }
+           
+       }
+
+
+       .shows-div {
+
+           @include imageFunction(size4) {
+            
+         }
+         @include imageFunction(size3)c{
+          
+         }
+     
+         @include imageFunction(size2){
+        
+         }
+         @include imageFunction(size1) {
+        
+         }
+           
+    
+
+       }
+
+      
+      
+      .ronald-lane-div {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          list-style: none;
+          border-bottom-style:groove ;
+          padding-bottom: 30px;
+      }
+
+      .pier-shows-ul {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style: none;
+        border-bottom-style:groove ;
+        padding-bottom: 30px;
+
+      }
+
+      .lounge-venue-ul{
+
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style: none;
+        border-bottom-style:groove ;
+        padding-bottom: 30px;
+
+
+      }
+
+      .haytt-agency-ul  {
+
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style: none;
+        border-bottom-style:groove ;
+        padding-bottom: 30px;
+      }
+
+      .moscow-center-ul {
+       width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style: none;
+        border-bottom-style:groove ;
+        padding-bottom: 30px;
+
+      }
+
+      .press-club-ul {
+
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style: none;
+        border-bottom-style:groove ;
+        padding-bottom: 30px;
+
+      }
+
+      .tickets-section-labels-container {
+          display: flex;
+          justify-content: center;
+          padding-top: 40px;
+          padding-left: 5%;
+         
+        
+    
+         
+        
+      }
+
+      .tickets-section-individual-labels  {
+          margin-right: 16%;
+          margin-bottom: 7%;
+          font-size: small;
+          font-style: normal;
+          font-weight: lighter;
+      }
+
+     
+     .music-sample-div {
+         margin-right: 20%;
+         
+        @include responsive(desktop) { 
+         @include flexJustifyStart();
+         @include titleDesktopParameters();
+     
+    } 
+    @include responsive( tablet){
+       @include flexJustifyStart();
+       @include titleDesktopParametersTwo();
+    }
+    @include responsive(phone) {
+        @include flexJustifyStart();
+        @include titleDesktopParametersThree();
+    }
+}
+
+.music-container-div  {
+    @include imageFunction(size4) {
+        @include displayFlexJustify();
+     }
+     @include imageFunction(size3)c{
+         @include displayFlexJustify();
+     }
+ 
+     @include imageFunction(size2){
+         @include typeOfDisplay();
+     }
+     @include imageFunction(size1) {
+         @include typeOfDisplay();
+     }
+       
+
+}
+
+.Join_the-conversation-div  {
+    @include  typeOfDisplay();
+    justify-content: center;
+    @include responsive(desktop) { 
+        
+       
+    
+   } 
+   @include responsive( tablet){
+     
+      
+   }
+   @include responsive(phone) {
+     
+     
+   }
+
+   .join_the-conversation-container-div {
+       margin-top: 5%;
+       margin-bottom:5% ;
+       display: flex;
+       justify-content: center;
+       flex-direction: column;
+   }
+
+
+}
